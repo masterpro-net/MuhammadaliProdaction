@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Muhammadali Prodaction</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Kirish videosi */
+    #intro {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      z-index: 1000;
+    }
+
+    #intro video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #continue {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 24px;
+      background: rgba(255, 255, 255, 0.8);
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Asosiy sayt */
+    #main-content {
+      display: none;
+      background-image: url('https://images.alphacoders.com/109/1098156.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 60px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      margin: 10px;
+      text-decoration: none;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background-color: #555;
+    }
+
+    /* Minecraft tugma */
+    .mcraft-btn {
+      background-color: #5EBD3E;
+      color: white;
+      padding: 12px 20px 12px 50px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      background-image: url('https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/43/Minecraft_grass_block_side.png');
+      background-size: 40px 40px;
+      background-repeat: no-repeat;
+      background-position: 5px center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .mcraft-btn:hover {
+      background-color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video orqali kirish sahifasi -->
+  <div id="intro">
+    <video id="intro-video" autoplay muted>
+      <source src="video.mp4" type="video/mp4">
+      Brauzeringiz video ko‘rsatishni qo‘llab-quvvatlamaydi.
+    </video>
+    <button id="continue">Saytga kirish</button>
+  </div>
+
+  <!-- Asosiy sayt -->
+  <div id="main-content">
+    <h1>Muhammadali Prodaction</h1>
+    <p>Bizning sahifalarimiz:</p>
+
+    <a href="https://youtube.com/@masterprouzb" target="_blank">YouTube</a>
+    <a href="https://t.me/MuhammadaliProdaction" target="_blank">Telegram</a>
+    <br><br>
+    <button class="mcraft-btn">O‘yinlarimizni sinab ko‘ring</button>
+  </div>
+
+  <script>
+    const video = document.getElementById("intro-video");
+    const intro = document.getElementById("intro");
+    const main = document.getElementById("main-content");
+    const btn = document.getElementById("continue");
+
+    video.addEventListener("ended", () => {
+      intro.style.display = "none";
+      main.style.display = "block";
+    });
+
+    btn.addEventListener("click", () => {
+      intro.style.display = "none";
+      main.style.display = "block";
+    });
+  </script>
+
+</body>
+  </html>
